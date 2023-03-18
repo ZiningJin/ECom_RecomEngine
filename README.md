@@ -1,2 +1,5 @@
 # ECom_RecomEngine
-ECommerce Recommendation Engine upon AWS Cloud 
+> Topic: ECommerce Recommendation Engine upon AWS Cloud 
+- Recommend products based on customer transactional data
+> Team Members: Charlie / Charles / James / Songyan
+
