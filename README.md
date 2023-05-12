@@ -10,5 +10,7 @@ Current Status: 3/12 ~ 4/21 DEMO Prep, 1 sprint per week
 2. Sprint2: go through 2.5 to 4 
 3. Sprint3: Sagemaker Optimization 
 4. Sprint4: go through 4 to 6 & CDC Implementation 
-5. Sprint5: diagram update / data flow update / DEMO Prep documentation update `Current`
+5. Sprint5: diagram update / data flow update / Staging DEMO Prep documentation update 
+6. Sprint6: integrating with DevOps team
+7. Sprint7: Formalization `Current`
 
