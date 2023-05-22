@@ -2,6 +2,7 @@
 > Topic: ECommerce Recommendation Engine upon AWS Cloud 
 - Recommend products based on customer interactions with IMBA, the company
 > Team Members: Charlie / Charles / James / Songyan 
+
 > Project Management Tool: 
 - [JIRA](https://charliejin.atlassian.net/jira/software/projects/JRDATAENG/boards/1/roadmap?shared=&atlOrigin=eyJpIjoiYzdkOWNhZmYyZjU1NGI0YmE5NmMyOTcxMmMxNWQ3YjkiLCJwIjoiaiJ9)
 > Memorials:
