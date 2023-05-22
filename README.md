@@ -2,7 +2,8 @@
 > Topic: ECommerce Recommendation Engine upon AWS Cloud 
 - Recommend products based on customer interactions with IMBA, the company
 > Team Members: Charlie / Charles / James / Songyan
-> Project Management Tool: [JIRA](https://charliejin.atlassian.net/jira/software/projects/JRDATAENG/boards/1/roadmap?shared=&atlOrigin=eyJpIjoiYzdkOWNhZmYyZjU1NGI0YmE5NmMyOTcxMmMxNWQ3YjkiLCJwIjoiaiJ9)
+> Project Management Tool: 
+- [JIRA](https://charliejin.atlassian.net/jira/software/projects/JRDATAENG/boards/1/roadmap?shared=&atlOrigin=eyJpIjoiYzdkOWNhZmYyZjU1NGI0YmE5NmMyOTcxMmMxNWQ3YjkiLCJwIjoiaiJ9)
 
 Current Status: Heading for Final Demonstration, 1 sprint per week
 1. Sprint1: EDA and Architecture Brainstorming
