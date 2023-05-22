@@ -5,7 +5,7 @@
 > JIRA
 [Redirect](https://charliejin.atlassian.net/jira/software/projects/JRDATAENG/boards/1/roadmap?shared=&atlOrigin=eyJpIjoiYzdkOWNhZmYyZjU1NGI0YmE5NmMyOTcxMmMxNWQ3YjkiLCJwIjoiaiJ9)
 
-Current Status: 3/12 ~ 4/21 DEMO Prep, 1 sprint per week
+Current Status: Ahead to final demonstration, 1 sprint per week
 1. Sprint1: go through 2 to 2.5
 2. Sprint2: go through 2.5 to 4 
 3. Sprint3: Sagemaker Optimization 
@@ -13,4 +13,5 @@ Current Status: 3/12 ~ 4/21 DEMO Prep, 1 sprint per week
 5. Sprint5: diagram update / data flow update / Staging DEMO Prep documentation update 
 6. Sprint6: integrating with DevOps team
 7. Sprint7: Formalization `Current`
+8. Final Demonstration
 
