@@ -1,7 +1,7 @@
 resource "aws_security_group" "imba-sg" {
-  name        = "imba-security-group"
+  name = "imba-security-group"
   # description = "allow http and https"
-  vpc_id      = aws_vpc.imba-vpc.id
+  vpc_id = aws_vpc.imba-vpc.id
   ingress {
     from_port   = 80
     to_port     = 80

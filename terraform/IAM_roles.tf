@@ -21,42 +21,36 @@ resource "aws_iam_role" "AWSGlueServiceRole" {
 }
 
 # attach policies to IAM role
-resource "aws_iam_policy_attachment" "AmazonRDSFullAccess" {
-  name       = "AmazonRDSFullAccess"
-  roles      = [aws_iam_role.AWSGlueServiceRole.name]
+resource "aws_iam_role_policy_attachment" "AmazonRDSFullAccess" {
+  role       = aws_iam_role.AWSGlueServiceRole.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
 }
 
-resource "aws_iam_policy_attachment" "AWSGlueServiceRole" {
-  name       = "AWSGlueServiceRole"
-  roles      = [aws_iam_role.AWSGlueServiceRole.name]
+resource "aws_iam_role_policy_attachment" "AWSGlueServiceRole" {
+  role       = aws_iam_role.AWSGlueServiceRole.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole"
 }
-
-resource "aws_iam_policy_attachment" "AWSGlueConsoleFullAccess" {
-  name       = "AWSGlueConsoleFullAccess"
-  roles      = [aws_iam_role.AWSGlueServiceRole.name]
+resource "aws_iam_role_policy_attachment" "AWSGlueConsoleFullAccess" {
+  role       = aws_iam_role.AWSGlueServiceRole.name
   policy_arn = "arn:aws:iam::aws:policy/AWSGlueConsoleFullAccess"
 }
 
-resource "aws_iam_policy_attachment" "AWSGlueSchemaRegistryFullAccess" {
-  name       = "AWSGlueSchemaRegistryFullAccess"
-  roles      = [aws_iam_role.AWSGlueServiceRole.name]
+resource "aws_iam_role_policy_attachment" "AWSGlueSchemaRegistryFullAccess" {
+  role       = aws_iam_role.AWSGlueServiceRole.name
   policy_arn = "arn:aws:iam::aws:policy/AWSGlueSchemaRegistryFullAccess"
 }
 
 resource "aws_iam_role_policy_attachment" "AWSGlueSchemaRegistryReadonlyAccess" {
-  #   name       = "AWSGlueSAWSGlueSchemaRegistryReadonlyAccesserviceRole"
   role       = aws_iam_role.AWSGlueServiceRole.name
   policy_arn = "arn:aws:iam::aws:policy/AWSGlueSchemaRegistryReadonlyAccess"
 }
 
 # attach AmazonS3FullAccess policy
-resource "aws_iam_policy_attachment" "AmazonS3FullAccess_ForGlue" {
-  name       = "AmazonS3FullAccess"
-  roles      = [aws_iam_role.AWSGlueServiceRole.name]
+resource "aws_iam_role_policy_attachment" "AmazonS3FullAccess_ForGlue" {
+  role       = aws_iam_role.AWSGlueServiceRole.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 # IAM role: Sagemaker
@@ -142,7 +136,6 @@ resource "aws_iam_role_policy_attachment" "SageMakertoS3_attachment" {
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonSageMakerFullAccess" {
-  #   name       = "AmazonSageMakerFullAccess"
   role       = aws_iam_role.SageMaker_IAM_Role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSageMakerFullAccess"
 }
@@ -233,15 +226,14 @@ resource "aws_iam_role_policy_attachment" "AWSLambdaBasicExecutionRole_Forlambda
 }
 
 # attach AmazonS3FullAccess policy
-resource "aws_iam_policy_attachment" "AmazonS3FullAccess_Forlambdas3tosagemaker" {
-  name       = "AmazonS3FullAccess"
-  roles      = [aws_iam_role.lambda_s3tosagemaker.name]
+resource "aws_iam_role_policy_attachment" "AmazonS3FullAccess_Forlambdas3tosagemaker" {
+  role       = aws_iam_role.lambda_s3tosagemaker.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
+
 # attach AmazonSageMakerFullAccess policy
-resource "aws_iam_policy_attachment" "AmazonSageMakerFullAccess_Forlambdas3tosagemaker" {
-  name       = "AmazonSageMakerFullAccess"
-  roles      = [aws_iam_role.lambda_s3tosagemaker.name]
+resource "aws_iam_role_policy_attachment" "AmazonSageMakerFullAccess_Forlambdas3tosagemaker" {
+  role       = aws_iam_role.lambda_s3tosagemaker.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSageMakerFullAccess"
 }
 
@@ -296,11 +288,11 @@ resource "aws_iam_policy" "AWSLambdaBasicExecutionRole_Forlambdaapi" {
 }
 
 # attach policiey S3 Full Access to IAM role "lambda_api"
-resource "aws_iam_policy_attachment" "AmazonS3FullAccess_Forlambdaapi" {
-  name       = "AmazonS3FullAccess"
-  roles      = [aws_iam_role.lambda_api.name]
+resource "aws_iam_role_policy_attachment" "AmazonS3FullAccess_Forlambdaapi" {
+  role       = aws_iam_role.lambda_api.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
+
 # attach custom policy "AWSLambdaVPCAccessExecutionRole" to "api" and "lambda_api" IAM role 
 resource "aws_iam_role_policy_attachment" "AWSLambdaVPCAccessExecutionRole_ForAPI" {
   role       = aws_iam_role.lambda_api.name
