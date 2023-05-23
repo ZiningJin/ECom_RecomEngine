@@ -27,14 +27,17 @@
 
 ### 3. Lambda Function:
 
-- s3tosagemaker: `de-ers.s3-to-sagemaker`
+- s3tosagemaker: `de-ers_s3-to-sagemaker`
 
 - API Gateway: `de-ers_API`
 
 ### 4. Sagemaker:
 - Sagemaker Notebook instance name: `de-ers-imba-modelling`
+
 - lifecycle configuration name: `de-ers-imba-sagemaker-lifecycle-config`
+
 - S3 bucket for Sagemaker output: `de-ers.imba-sagemaker-output`
+
 - JSON output: `recommendations-+now()`
 
 ### 5. API Gateway:
@@ -42,7 +45,7 @@
 
 	Resource name: `de-ers-imba-resource`
 
-    Deploy API Stage name: `de-ers-imba-stage`
+    Deploy API Stage name: `de-ers-imba-API-stage`
 
 
 ## IAM roles:
