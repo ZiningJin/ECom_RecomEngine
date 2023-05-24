@@ -1,6 +1,6 @@
 # create rest api gateway
 resource "aws_api_gateway_rest_api" "imba-API" {
-  name = "de-ers.imba-API.test0523"
+  name = "de-ers.imba-API"
   endpoint_configuration {
     types = ["REGIONAL"]
   }
@@ -61,20 +61,4 @@ resource "aws_api_gateway_deployment" "example" {
   ]
 
   rest_api_id = aws_api_gateway_rest_api.imba-API.id
-}
-
-
-
-# Set trigger
-# Allowing API Gateway to Access Lambda
-# Lambda permission
-resource "aws_lambda_permission" "apigw_lambda" {
-  depends_on = [
-    aws_api_gateway_deployment.example,
-  ]
-  statement_id  = "AllowExecutionFromAPIGateway"
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.api.function_name
-  principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.imba-API.execution_arn}/*/*"
 }

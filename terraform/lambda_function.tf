@@ -38,3 +38,17 @@ resource "aws_lambda_function" "api" {
   role          = aws_iam_role.lambda_api.arn
   timeout       = 60
 }
+
+# Set trigger for lambda_API
+# Allowing API Gateway to Access Lambda
+# Lambda permission
+resource "aws_lambda_permission" "apigw_lambda" {
+  depends_on = [
+    aws_api_gateway_deployment.example,
+  ]
+  statement_id  = "AllowExecutionFromAPIGateway"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.api.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_api_gateway_rest_api.imba-API.execution_arn}/*/*"
+}

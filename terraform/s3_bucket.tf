@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "imba-bucket" {
   bucket = "de-ers.imba-bucket"
 }
 
-#upload script to s3
+#upload glue job git submodulescript to s3
 resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.imba-bucket.id
   key    = "/glue_job_script/de-ers-imba-glue-ETL-spark.py"
