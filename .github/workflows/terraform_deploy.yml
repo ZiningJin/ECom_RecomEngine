@@ -5,11 +5,11 @@ on:
   workflow_dispatch:
   push:
     branches:
-#     - main
+    - main
     - DevOps-terraform
-  # pull_request:
-  #   branches:
-  #   - main
+  pull_request:
+    branches:
+    - main
 
 permissions:
   contents: read
