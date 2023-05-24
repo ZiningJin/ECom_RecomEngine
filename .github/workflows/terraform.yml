@@ -3,9 +3,10 @@ run-name: ${{ github.actor }} is deploying...
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #   - main
+  push:
+    branches:
+#     - main
+    - DevOps-terraform
   # pull_request:
   #   branches:
   #   - main
