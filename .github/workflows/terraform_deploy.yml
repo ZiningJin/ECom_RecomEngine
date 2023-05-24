@@ -2,14 +2,14 @@ name: 'Terraform'
 run-name: ${{ github.actor }} is deploying...
 
 on:
+#   push:
+#     branches:
+#     - main
+#     - DevOps-terraform
+#   pull_request:
+#     branches:
+#     - main
   workflow_dispatch:
-  push:
-    branches:
-    - main
-    - DevOps-terraform
-  pull_request:
-    branches:
-    - main
 
 permissions:
   contents: read
