@@ -41,6 +41,8 @@ jobs:
         run: |
           zip -j lambda_code_s3tosagemaker.zip ./dataserving/de-ers_s3tosagemaker.py
           zip -j lambda_function_get_recommendation.zip ./dataserving/de-ers_API.py
+          mv lambda_code_s3tosagemaker.zip terraform/
+          mv lambda_function_get_recommendation.zip terraform/
 
       - name: Terraform fmt
         run: terraform fmt
