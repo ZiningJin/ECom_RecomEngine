@@ -2,21 +2,19 @@ name: 'Terraform'
 run-name: ${{ github.actor }} is deploying...
 
 on:
-#   push:
-#     branches:
-#     - main
-#     - DevOps-terraform
-#   pull_request:
-#     branches:
-#     - main
   workflow_dispatch:
+    inputs:
+      action:
+        description: 'Terraform apply or destroy?'
+        required: true
+        default: 'apply'
 
 permissions:
   contents: read
 
 jobs:
   terraform:
-    name: 'Terraform validation'
+    name: 'Terraform'
     runs-on: ubuntu-latest
 
     defaults:
@@ -44,21 +42,28 @@ jobs:
           mv lambda_code_s3tosagemaker.zip terraform/
           mv lambda_function_get_recommendation.zip terraform/
 
-      - name: Terraform fmt
-        run: terraform fmt
-        working-directory: ./terraform
-
       - name: Terraform init
-        run: terraform init
         working-directory: ./terraform
+        run: terraform init
+        
+      - name: Terraform fmt
+        working-directory: ./terraform
+        run: terraform fmt
 
       - name: Terraform plan
-        if: github.event_name == 'pull_request'
+        working-directory: ./terraform
         run: terraform plan
-        working-directory: ./terraform
 
-
-      - name: Terraform apply
-        if: github.event_name == 'push'
-        run: terraform apply -auto-approve
+      - name: Terraform Apply or Destroy
         working-directory: ./terraform
+        run: |
+          if [ "${{ github.event.inputs.action }}" = "apply" ]; then
+            terraform apply -auto-approve
+            aws s3 cp ./terraform.tfstate s3://de-ers.imba-bucket/terraform-statefile/terraform.tfstate
+          elif [ "${{ github.event.inputs.action }}" = "destroy" ]; then
+            aws s3 cp s3://de-ers.imba-bucket/terraform-statefile/terraform.tfstate .
+            terraform destroy -auto-approve
+          else
+            echo "Invalid action specified"
+            exit 1
+          fi
