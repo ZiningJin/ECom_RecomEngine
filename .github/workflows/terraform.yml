@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Terraform Deployment'
 run-name: ${{ github.actor }} is deploying...
 
 on:
