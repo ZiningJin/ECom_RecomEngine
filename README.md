@@ -10,7 +10,7 @@
 > Memorials:
 - [Notion](https://www.notion.so/invite/f76b4836d58b4ca30777e12a9d1459a742a97c6d)
 
-> Architecture:
+> Architecture: 
 ![Main and CDC Branches](https://github.com/ZiningJin/ECom_RecomEngine/blob/main/DE-ers-final-architecture-with-VPC.png)
 
 Current Status: Heading for Final Demonstration, 1 sprint per week
