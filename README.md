@@ -20,7 +20,7 @@ Current Status: Heading for Final Demonstration, 1 sprint per week
 4. Sprint4: Go through 4 to 6 & CDC Implementation 
 5. Sprint5: Diagram update / Data flow update / Staging DEMO Prep documentation update 
 6. Sprint6: integrating with DevOps team
-7. **Staging Demonstration: [Welcome to our architecture!](https://www.youtube.com/watch?v=0_sCH_NpI8Q)**
+7. **Staging Demonstration: [Welcome to our staging demo!](https://www.youtube.com/watch?v=0_sCH_NpI8Q)**
 8. Sprint7: Formalization 
 9. Final Demonstration `Current`
 
